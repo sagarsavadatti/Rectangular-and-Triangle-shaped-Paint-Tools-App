@@ -21,14 +21,6 @@ function copy() {
 function paste() {
     ctx.putImageData(imgData, 0, 0);
 }
-  
-  // Draw the Rectangular using Mouse Coordinates.
-function drawRect(position) {
-
-    ctx.beginPath();
-    ctx.rect(position.x, position.y, dragStartPoint.x - position.x, dragStartPoint.y - position.y);
-    ctx.fill();
-} 
 
 // Draw the Triangle using Mouse Coordinates.
   function drawTriangle(position)
@@ -54,13 +46,8 @@ function drawRect(position) {
      ctx.fill();
  }
       
- // Using draw function decide which shape user want to draw and default will be Rectangular.
-     function draw(position) {
-
-      var  shape = document.querySelector('input[type="radio"][name="shape"]:checked').value;
-    if (shape === "rect") {
-        drawRect(position);
-    }
+ // Using draw function decide which shape user want to draw and default will be triangle
+     function draw(position) 
     
     if (shape === "tri") {
         drawTriangle(position);
